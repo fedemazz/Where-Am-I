@@ -1,0 +1,208 @@
+#map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+
+#big{
+			height: 30vh !important;
+		}
+
+		#map{
+			width: 90% !important;
+			height: 70% !important;
+			border-radius: 10px;
+			margin: 0 5% !important;
+		}
+
+		.prova{
+			font-style: bold;
+			font-size: 1.5em;
+			margin-left: 5%;
+		}
+
+		#pac-input {
+		  background-color: white;
+		  font-family: Roboto;
+		  font-size: 15px;
+		  font-weight: 300;
+		  margin-top: 10px;
+      margin-left: 12px;
+		  padding: 0 11px 0 13px;
+		  text-overflow: ellipsis;
+		  width: 70%;
+		  z-index: 999999;
+		}
+
+    #pac-input {
+      }
+
+		#pac-input:focus {
+		  border-color: blue;
+		}
+
+    video{
+      width: 40%;
+      height: auto;
+      border-radius: 10px;
+      margin: 5px;
+    }
+
+    .centro{
+      text-align: center;
+    }
+
+
+
+#customBtn {
+      display: inline-block;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+      margin-top:10px;
+    }
+
+    
+
+
+
+#gSignInWrapper{
+  text-align:center;
+}
+
+    #customBtn:hover {
+      cursor: pointer;
+    }
+
+    span.icon {
+      background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+#scegliVideo{
+  text-align:center;
+}
+
+  .loader {
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin-left: calc(50% - 40px);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading{
+  width: 100%;
+  text-align: center;
+  content-align:center;
+}
+
+
+@media screen and (max-width: 600px) {
+  #registraVideo {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #scegliVideo {
+    
+  margin-top:10vh;
+  }
+}
+

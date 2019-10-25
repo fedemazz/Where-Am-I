@@ -1,0 +1,252 @@
+<html>
+<head>
+
+<title>WAI? - Browser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<script src="https://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>-->
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.5/leaflet-routing-machine.js"></script>
+
+<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" ></script>
+
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+  
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+<script src="/browser.js"> </script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.5/leaflet-routing-machine.css" />
+
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+
+
+ <!-- icone --> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fine icone -->
+
+
+
+<link rel="stylesheet" href="/stile.css" type="text/css">
+
+
+
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="bootstrap/full-width-pics.css" rel="stylesheet">
+
+</head>
+
+<body onLoad="javascript:init();">
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Where Am I?</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/browser">Browser
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/editor">Editor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="/#service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#about">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<section id="mappa">
+  <div id="map"> <div id="myIframe" style="display:none;"></div></div>
+    
+   <script src="https://www.youtube.com/iframe_api"> </script>
+   
+</section>
+
+<section id="barraInferiore">
+
+  <div class="container">
+
+      <div class="icon-bar2" style="margin-bottom: 59.26px;">
+          <input type="button" id="filterButton" data-toggle="modal" data-target="#sceltaOLC" value="OLC">
+        </input>
+        <input type="button" id="filterButton" data-toggle="modal" data-target="#exampleModalCenter" value="Filtra">
+        </input>
+          <div id="videoDetails"> <marquee behavior="scroll" direction="left"><p id="p"> </p> </marquee> </div>
+          <a href="#" onClick="getMoreVideo();"><i class="fa fa-forward"></i></a> 
+          <a href="#" onClick="pause();" id="pause"><i class="fa fa-pause"></i></a> 
+          <a href="#"  onClick="play();" id="play"><i class="fa fa-play"></i></a> 
+
+      </div>
+
+
+      <div class="icon-bar">
+          <a class="active" href="#" onClick="javascript:getLocationLeaflet();"><i class="fa fa-home"></i></a> 
+          <a href="#" title="Cerca punti d'interesse" onClick="javascript:searchYT();"><i class="fa fa-search"></i></a> 
+          <a href="#" title="Vai al marker precedente" onClick="goToPreviousMarker();"><i class="fa fa-hand-point-left"></i></a> 
+          <a href="#" title="Vai al marker successivo" onClick="goToNextMarker();"><i class="fa fa-hand-point-right"></i></a> 
+          <a href="#" title="Sei arrivato, riproduci video!" id="arrived" value="" onClick="playVideo();"><i class="fa fa-globe"></i></a>
+      </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Filtra la tua ricerca</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+<div class="modal-body">
+  
+<div class="input-group mb-3">
+  <select class="custom-select" id="purpose">
+    <option selected value="0">Purpose</option>
+    <option value="who">who</option>
+    <option value="why">why</option>
+    <option value="what">what</option>
+  </select>
+
+  <select class="custom-select" id="audience">
+    <option selected value="0">Audience</option>
+    <option value="gen">Pubblico Generico</option>
+    <option value="pre">Pre-scuola</option>
+    <option value="elm">Scuola primaria</option>
+    <option value="mid">Scuola media</option>
+    <option value="scl">Special</option>
+  </select>
+
+
+  <select class="custom-select" id="lenguage">
+  <option selected value="0">Lenguage</option>
+    <option value="ita">Italiano</option>
+    <option value="eng">Inglese</option>
+    <option value="deu">Tedesco</option>
+    <option value="esp">Spagnolo</option>
+    <option value="fra">Francese</option>
+  </select>
+
+  <select class="custom-select" id="content">
+    <option selected value="0">Content</option>
+    <option value="nat">Natura</option>
+    <option value="art">Arte</option>
+    <option value="his">Storia</option>
+    <option value="flk">Folklore</option>
+    <option value="mod">Cultura Moderna</option>
+    <option value="rel">Religione</option>
+    <option value="cui">Cucina & Drink</option>
+    <option value="spo">Sport</option>
+    <option value="mus">Musica</option>
+    <option value="mov">Film</option>
+    <option value="fas">Moda</option>
+    <option value="shp">Shopping</option>
+    <option value="tec">Tecnologia</option>
+    <option value="pop">Cultura Pop</option>
+    <option value="prs">Esperienze Personali</option>
+    <option value="oth">Altro</option>  
+  </select>
+  
+  <select class="custom-select" id="detail">
+    <option selected value="0">Detail</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+
+</div>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="searchYT();">Reset</button>
+        <button type="button" class="btn btn-primary"  data-dismiss="modal" onClick="getFilter();">Conferma</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sceltaOLC" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Scegli precisione OLC</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+
+<div class="modal-body"  style="text-align:center">
+  
+  
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="reg" autocomplete="off" checked> OLC regione
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="citta" autocomplete="off"> OLC quartiere
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="prec" autocomplete="off"> OLC preciso
+  </label>
+
+</div>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  data-dismiss="modal" onClick="choicedOLC();">Conferma</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+  <script src="bootstrap/jquery.min.js"></script>
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
+
+  

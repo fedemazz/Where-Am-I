@@ -187,11 +187,7 @@ function init() {
       var detail;
       var title;
 
-      url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=AIzaSyDnAzOHmO6Tu_Bh31CIrxaJv_JOTZG_36Q';
-      //url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=AIzaSyBXUuqi8y8hmunj8pd5Fj3lxZcYAzzO9DI';
-      //url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=AIzaSyBS6jZfzrZ7bARv-RnBTkCUUOm1NfP0F3M';
-      //url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=AIzaSyCAoJ_6_MQK-KjFWa_l1J13nisDxCA89b0';
-      //url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=AIzaSyDnAzOHmO6Tu_Bh31CIrxaJv_JOTZG_36Q';
+      url_searchYT='https://www.googleapis.com/youtube/v3/search?part=snippet&q='+olc_scelto+'&maxResults=25&key=ytAPIkey';
       
       
       console.log(url_searchYT);
